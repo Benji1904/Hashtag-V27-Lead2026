@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Hashtag V27 | L'Aréna des Stars</title>
+    <meta name="description" content="La billetterie officielle et exclusive de Kinshasa. Réservez vos places, recevez vos billets PDF et vivez l'expérience V27." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'milk-start': '#F8FAFC',
+              'milk-end': '#F1F5F9',
+              'royal-dark': '#4C1D95', // Deepest Purple
+              'royal-main': '#6A0DAD', // Main Royal Purple
+              'royal-light': '#8B5CF6', // Luminous Purple
+              'jewel-highlight': '#E9D5FF',
+            },
+            fontFamily: {
+              sans: ['Montserrat', 'sans-serif'],
+            },
+            boxShadow: {
+              'jewel': '0 20px 40px -15px rgba(106, 13, 173, 0.5)',
+              'jewel-hover': '0 30px 60px -12px rgba(106, 13, 173, 0.7)',
+              'glass-shine': 'inset 0 2px 0 rgba(255, 255, 255, 0.7), inset 0 -2px 0 rgba(0, 0, 0, 0.05)',
+              'candy': '0 10px 20px -5px rgba(106, 13, 173, 0.6), inset 0 2px 4px rgba(255,255,255,0.6)',
+            },
+            backgroundImage: {
+              'gradient-royal': 'linear-gradient(135deg, #6A0DAD 0%, #8B5CF6 100%)',
+              'gradient-milk': 'linear-gradient(180deg, #F8FAFC 0%, #E2E8F0 100%)',
+            },
+            animation: {
+              'float': 'float 8s ease-in-out infinite',
+              'shimmer': 'shimmer 3s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '200% 0' },
+                '100%': { backgroundPosition: '-200% 0' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Jewel Glass Effect */
+      .glass-jewel {
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 0 20px 40px -15px rgba(106, 13, 173, 0.2);
+      }
+      
+      .text-royal-gradient {
+        background: linear-gradient(to right, #4C1D95, #8B5CF6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      /* Subtle mesh gradient for background */
+      .bg-royal-mesh {
+        background-color: #F8FAFC;
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, rgba(106, 13, 173, 0.10) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+          radial-gradient(at 0% 100%, rgba(106, 13, 173, 0.10) 0px, transparent 50%);
+      }
+
+      /* Cinematic Animation */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+
+      /* PRINT STYLES - Ensures only the ticket prints */
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        .print-area, .print-area * {
+          visibility: visible;
+        }
+        .print-area {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: white !important;
+          border: none !important;
+          box-shadow: none !important;
+        }
+        .no-print {
+          display: none !important;
+        }
+      }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/",
+    "@yudiel/react-qr-scanner": "https://esm.sh/@yudiel/react-qr-scanner@^2.5.0",
+    "html5-qrcode": "https://esm.sh/html5-qrcode",
+    "jspdf": "https://esm.sh/jspdf@^2.5.1",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-royal-mesh text-slate-800 antialiased selection:bg-royal-main selection:text-white overflow-x-hidden">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

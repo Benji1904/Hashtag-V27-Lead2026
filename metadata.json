@@ -1,0 +1,7 @@
+{
+  "name": "New ZUA BILLET V27",
+  "description": "Royal Digital Jewel. Luxe, Sécurité et Glamour.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
